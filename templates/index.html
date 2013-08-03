@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/static/main.css"/>
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIIs5TVvW_8s6eqpFhX-ZvQJtVkrBZvno&sensor=false"></script>
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="/static/frameworks/json2.js"></script>--> <!-- https://raw.github.com/douglascrockford/JSON-js/master/json2.js -->
+	<script type="text/javascript" src="/static/frameworks/underscore-min.js"></script> <!-- https://underscore-js.com -->
+	<script type="text/javascript" src="/static/frameworks/backbone-min.js"></script> <!-- https://backbone-js.com -->
+
+	<script type="text/javascript" src="/static/maps.js"></script>
+	<script type="text/javascript" src="/static/main.js"></script> <!-- program starts execution in here -->
+</head>
+
+<body>
+
+	<div id="header">[map]</div>
+
+	<div id="map-canvas"></div>
+
+	<div class="column">
+		<div class="content">
+			<div id="searchForm">
+				<div class="title find">Search</div>
+
+				<input type="text" id="searchAddress" value="" placeholder="Address"><button id="searchBtn" class="submit" type="submit"> <img src="/static/images/search-icon.png"/> </button> </input>
+				<input style="width:100%" type="text" id="nickname" value="" placeholder="Nickname"></input>
+				<button id="saveAddress" class="actionButton">Save Address</button>
+
+				<button id="startEdit" class="actionButton">Edit</button>
+				<button id="stopEdit" class="actionButton">Stop Edit</button>
+
+				<button id="updateAddress" class="actionButton" style="display: none;">Update Address</button>
+				<button id="deleteAddress" class="actionButton" style="display:none;">Delete</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="column">
+		<div class="content">
+			<div class="title">Locations</div>
+			<div id="addresses"/>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+
+	<!-- underscore templates -->
+	<script id="addressTemplate" type="text/html">
+		<a id="model-<%= id %>" class="address" title="[<%= nickname %>] <%= address %>" href="javascript:void(0);"><span>[<%= nickname %>]</span> <%= address %></a>
+	</script>
+
+</body>
+
+</html>
+
+
+
+
