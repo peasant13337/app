@@ -12,6 +12,8 @@
 # 2. . bin/activate
 # 3. sudo pip install SQLAlchemy
 
+# how to install git on amazon ec2
+# sudo yum install git
 
 
 import sqlite3
